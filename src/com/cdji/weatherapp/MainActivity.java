@@ -86,11 +86,13 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-//				DataBaseHelper dbhelper = new DataBaseHelper(MainActivity.this);
-//				SQLiteDatabase searchdb = dbhelper.getReadableDatabase();
-//				searchdb.execSQL("delete * from seachedcity;");
+				DataBaseHelper dbhelper = new DataBaseHelper(MainActivity.this);
+				SQLiteDatabase searchdb = dbhelper.getReadableDatabase();
+				searchdb.execSQL("delete from seachedcity where isrecode=\"1\";");
+				searchdb.execSQL("delete from seachedcity where isalarm=\"1\";");
+//				searchdb.delete("seachedcity", "isrecode", new String[]{"1"});
 //				searchdb.execSQL("delete from seachedcity; select * from seachedcity;update seachedcity set seq=0 where name=seachedcity; ");
-//				searchdb.close();
+				searchdb.close();
 			}
 		});
 		

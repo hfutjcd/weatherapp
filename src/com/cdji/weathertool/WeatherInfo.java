@@ -2,10 +2,12 @@ package com.cdji.weathertool;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import android.R.bool;
 import android.R.string;
+import android.net.ParseException;
 
 public class WeatherInfo implements Serializable{
 //	private Date date;
@@ -125,5 +127,28 @@ public class WeatherInfo implements Serializable{
 		}
 
 	}
+	
+	public String getweek() {
+		// TODO Auto-generated method stub
+		final String dayNames[] = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五",
+		"星期六" };
+		String s = "20"+date+" "+pubdate;
+		SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		Calendar calendar = Calendar.getInstance();
+		Date date = new Date();
+		try {
+		date = sdfInput.parse(s);
+		} catch (ParseException e) {
+		e.printStackTrace();
+		} catch (java.text.ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		calendar.setTime(date);
+		int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)-1;
+		if(dayOfWeek<0)dayOfWeek=0;
+		return dayNames[dayOfWeek];
+	}
+	
 
 }

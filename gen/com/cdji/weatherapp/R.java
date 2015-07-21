@@ -28,7 +28,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090023;
+        public static final int action_settings=0x7f090024;
         public static final int beijing=0x7f090005;
         public static final int changcun=0x7f09000b;
         public static final int changsha=0x7f09000f;
@@ -58,7 +58,8 @@ public final class R {
         public static final int taian=0x7f090020;
         public static final int tianjing=0x7f090006;
         public static final int weather_cityname_text=0x7f090021;
-        public static final int weatherinfo_detail=0x7f090022;
+        public static final int weather_date_text=0x7f090022;
+        public static final int weatherinfo_detail=0x7f090023;
         public static final int wuhan=0x7f09000e;
         public static final int wuxi=0x7f090015;
         public static final int xiamen=0x7f09001d;

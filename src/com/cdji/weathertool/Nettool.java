@@ -29,21 +29,17 @@ public class Nettool {
 		String result=null;
 		StringBuffer sbf=new StringBuffer();
 		String Url=null;
-		System.out.println(Url);
 		
 			System.out.println("-1");			
 			try {
 				Url=httpUrl+"?"+httpArg+URLEncoder.encode(name, "utf-8");
-//				Url=
 				URL url=new URL(Url);
 				System.out.println(url);
 				HttpURLConnection connection=(HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 				connection.setRequestProperty("apikey", "cd63fe7470d589fe168cc08d79ae7374");
 				connection.setConnectTimeout(5000);
-				System.out.println(0);
 				connection.connect();
-				System.out.println(1);
 				InputStream is=connection.getInputStream();
 				reader=new BufferedReader(new InputStreamReader(is,"UTF-8"));
 				String strRead=null;
@@ -54,7 +50,6 @@ public class Nettool {
 				}
 				reader.close();
 				result=sbf.toString();
-				System.out.println(2);
 				JSONObject json=new JSONObject(result);
 				System.out.println(json.getString("errMsg"));
 				if(json.get("errMsg").equals("success"))

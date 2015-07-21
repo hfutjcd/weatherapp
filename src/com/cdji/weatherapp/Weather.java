@@ -1,10 +1,13 @@
 package com.cdji.weatherapp;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ParseException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -18,6 +21,7 @@ public class Weather extends Activity {
 	private WeatherInfo weathinfo;
 	private TextView city_nameTextView;
 	private TextView weatherinfoTextView;
+	private TextView weatherdateTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class Weather extends Activity {
 		// TODO Auto-generated method stub
 		city_nameTextView = (TextView) findViewById(R.id.weather_cityname_text);
 		weatherinfoTextView = (TextView) findViewById(R.id.weatherinfo_detail);
+		weatherdateTextView=(TextView) findViewById(R.id.weather_date_text);
 	}
 
 	private void getWeatherinfo(String cityname) {
@@ -55,23 +60,26 @@ public class Weather extends Activity {
 		wget.execute("");
 	}
 	public void showweather(WeatherInfo weatherInfo) {
-		city_nameTextView.setText(weatherInfo.getCityname() + '\n'
-				+ weatherInfo.getDate());
+		city_nameTextView.setText(weatherInfo.getCityname());
+		weatherdateTextView.setText(weatherInfo.getDate()+"  "+weatherInfo.getweek());
 		StringBuffer strbufBuffer = new StringBuffer();
-		strbufBuffer.append(weatherInfo.getWeathinfo() + '\n' + '\n');
-		strbufBuffer.append(weatherInfo.getPresentemp() + "" + '\n');
-		strbufBuffer.append(weatherInfo.getLowesttemp() + "" + '\n');
-		strbufBuffer.append(weatherInfo.getHeightesttemp() + "" + '\n');
+		strbufBuffer.append("天气状况："+weatherInfo.getWeathinfo() + '\n' + '\n');
+		strbufBuffer.append("当前温度："+weatherInfo.getPresentemp() + " ℃" + '\n');
+		strbufBuffer.append("最低温度："+weatherInfo.getLowesttemp() + " ℃" + '\n');
+		strbufBuffer.append("最高温度："+weatherInfo.getHeightesttemp() + " ℃" + '\n');
+		strbufBuffer.append("风向："+weatherInfo.getWindirection() + "" + '\n');
+		strbufBuffer.append("风力："+weatherInfo.getWindforce() + "" + '\n');
 		weatherinfoTextView.setText(strbufBuffer.toString());
 		DataBaseHelper dbhelper = new DataBaseHelper(this);
 		SQLiteDatabase searchdb = dbhelper.getReadableDatabase();
 		Cursor cursor=searchdb.rawQuery("select * from seachedcity where cityname=?",
 				new String[] { weatherInfo.getCityname()});
 		if (!cursor.moveToFirst()) {
-//			searchdb.execSQL("insert into searchedcity (id_citiy,cityname,isrecode,isalarm) values("+weatherInfo.getId_city()+","+weatherInfo.getCityname()+",1,1");
+			searchdb.execSQL("insert into seachedcity (id_citiy,cityname,isrecode,isalarm) values(\""+weatherInfo.getId_city()+"\",\""+weatherInfo.getCityname()+"\",\"1\",\"1\");");
 		}
 		
 	}
+
 
 	public class Asyweatherget extends AsyncTask<String, String, WeatherInfo> {
 

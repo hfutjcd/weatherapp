@@ -28,6 +28,5 @@
     <style name="showactivityfont" parent="android:Widget.Holo.Light.TextView">
         <item name="android:textColor">@color/Black</item>
         <item name="android:textSize">40sp</item>
-        <item name="android:gravity">center</item>
     </style>
 </resources>

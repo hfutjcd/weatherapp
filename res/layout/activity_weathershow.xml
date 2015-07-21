@@ -7,25 +7,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/weather_cityname_text"
             style="@style/showactivityfont"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center" />
 
+        <TextView
+            android:id="@+id/weather_date_text"
+            style="@style/showactivityfont"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:textSize="25sp" />
+    </LinearLayout>
+	
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="0dp"
         android:layout_weight="3" >
 
         <TextView
-            style="@style/showactivityfont"
             android:id="@+id/weatherinfo_detail"
+            style="@style/showactivityfont"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:textSize="30sp" />
     </LinearLayout>
 
 </LinearLayout>
