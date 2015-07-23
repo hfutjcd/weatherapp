@@ -9,6 +9,22 @@ package com.cdji.weatherapp;
 
 public final class R {
     public static final class attr {
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>May be an integer value, such as "<code>100</code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>May be a floating point value, such as "<code>1.2</code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>May be a fractional value, which is a floating point number appended with either % or %p, such as "<code>14.5%</code>".
+The % suffix always means a percentage of the base size; the optional %p suffix provides a size relative to
+some parent container.
+         */
+        public static final int actionBarSize=0x7f010000;
     }
     public static final class color {
         public static final int Black=0x7f040000;
@@ -28,7 +44,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090024;
+        public static final int action_settings=0x7f090028;
         public static final int beijing=0x7f090005;
         public static final int changcun=0x7f09000b;
         public static final int changsha=0x7f09000f;
@@ -40,6 +56,7 @@ public final class R {
         public static final int delete_btn=0x7f090003;
         public static final int fuzou=0x7f09001c;
         public static final int guangzou=0x7f090010;
+        public static final int guider=0x7f090024;
         public static final int haerbin=0x7f09000c;
         public static final int hangzou=0x7f090018;
         public static final int hefei=0x7f090011;
@@ -48,18 +65,21 @@ public final class R {
         public static final int linearlayout1=0x7f090000;
         public static final int nanjing=0x7f090013;
         public static final int ningbo=0x7f090019;
+        public static final int pager=0x7f090022;
         public static final int qingdao=0x7f09001b;
         public static final int search=0x7f090002;
+        public static final int setting_btn=0x7f090023;
         public static final int shanghai=0x7f090007;
         public static final int shengyang=0x7f090009;
         public static final int shenzen=0x7f090012;
         public static final int shuzou=0x7f090017;
+        public static final int speeh_btn=0x7f090021;
         public static final int tablegrid=0x7f090004;
         public static final int taian=0x7f090020;
         public static final int tianjing=0x7f090006;
-        public static final int weather_cityname_text=0x7f090021;
-        public static final int weather_date_text=0x7f090022;
-        public static final int weatherinfo_detail=0x7f090023;
+        public static final int weather_cityname_text=0x7f090026;
+        public static final int weather_date_text=0x7f090027;
+        public static final int weatherinfo_detail=0x7f090025;
         public static final int wuhan=0x7f09000e;
         public static final int wuxi=0x7f090015;
         public static final int xiamen=0x7f09001d;
@@ -68,7 +88,10 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_weathershow=0x7f030001;
+        public static final int activity_setting=0x7f030001;
+        public static final int activity_weathershow=0x7f030002;
+        public static final int toolbar=0x7f030003;
+        public static final int viewpageritem=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -100,6 +123,7 @@ public final class R {
         public static final int shenzen=0x7f060011;
         public static final int shuzou=0x7f060016;
         public static final int taian=0x7f06001f;
+        public static final int text_begin=0x7f060020;
         public static final int tianjing=0x7f060005;
         public static final int wuhan=0x7f06000d;
         public static final int wuxi=0x7f060014;

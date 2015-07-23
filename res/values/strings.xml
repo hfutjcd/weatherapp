@@ -33,5 +33,6 @@
     <string name="chengdu">成都</string>
     <string name="kunming">昆明</string>
     <string name="taian">泰安</string>
+    <string name="text_begin">请开始说话…</string>
 
 </resources>

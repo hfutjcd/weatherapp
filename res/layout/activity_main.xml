@@ -7,6 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cdji.weatherapp.MainActivity" 
+    android:background="#FFFFFFFF"
     android:orientation="vertical">
 
     <LinearLayout
@@ -210,6 +211,7 @@
     </TableLayout>
 
     <Button 
+        android:id="@+id/speeh_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

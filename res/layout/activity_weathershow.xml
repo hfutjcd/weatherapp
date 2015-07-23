@@ -2,36 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffffff"
     android:orientation="vertical" >
-
-    <LinearLayout
-        android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/weather_cityname_text"
-            style="@style/showactivityfont"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:gravity="center" />
-
-        <TextView
-            android:id="@+id/weather_date_text"
-            style="@style/showactivityfont"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:gravity="center"
-            android:textSize="25sp" />
+        android:layout_weight="1">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v4.view.ViewPager>
+    <Button 
+        android:id="@+id/setting_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="13dp"
+        android:background="#cccccccc"
+        android:textColor="#ff000000"
+        android:textSize="20sp"
+        android:text="设置"/>
+</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/guider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
     </LinearLayout>
-	
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="3" >
 
         <TextView
@@ -39,7 +42,7 @@
             style="@style/showactivityfont"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:textSize="30sp" />
     </LinearLayout>
 
